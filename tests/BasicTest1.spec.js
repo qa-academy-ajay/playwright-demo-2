@@ -76,5 +76,5 @@ test.only("how to handle non select tag dropdown", async({browser})=>{
       break;
     }
   }
-  await page.pause()
+
 })
