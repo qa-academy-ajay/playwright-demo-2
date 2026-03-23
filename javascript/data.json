@@ -1,0 +1,29 @@
+{
+    "userId": "user_123456",
+    "activities": [
+        {
+            "action": "login",
+            "timestamp": "2024-01-15T08:30:00Z",
+            "details": {
+                "method": "password"
+            }
+        },
+        {
+            "action": "view_page",
+            "timestamp": "2024-01-15T08:31:00Z",
+            "details": {
+                "page": "/dashboard"
+            }
+        },
+        {
+            "action": "update_profile",
+            "timestamp": "2024-01-15T09:15:00Z",
+            "details": {
+                "field": "avatar"
+            }
+        }
+    ],
+    "totalActions": 15,
+    "lastActive": "2024-01-15T09:15:00Z"
+}
+

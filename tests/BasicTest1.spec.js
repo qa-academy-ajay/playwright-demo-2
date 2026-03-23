@@ -78,3 +78,16 @@ test.only("how to handle non select tag dropdown", async({browser})=>{
   }
 
 })
+
+let username = "ajaykr.mailbox@gmail.com"
+let password = "Automation@123"
+test("function demo", async({page})=>{
+  user_login(page, username, password);
+})
+
+async function user_login(page, username, password){
+  await page.goto('https://rahulshettyacademy.com/client/#/auth/login');
+  await page.locator('#userEmail').fill(username);
+  await page.locator("#userPassword").fill(password);
+  await page.locator('#login').click();
+}
