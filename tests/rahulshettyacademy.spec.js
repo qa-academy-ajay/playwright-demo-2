@@ -8,6 +8,8 @@ test.only("order product", async ({ browser }) => {
   await page.locator('#userEmail').fill("ajaykr.mailbox@gmail.com");
   await page.locator("#userPassword").fill("Automation@123");
   await page.locator('#login').click();
+
+
   const products = page.locator('div.card-body');
   await products.first().waitFor({ state: 'visible' });
   let price;
@@ -28,6 +30,8 @@ test.only("order product", async ({ browser }) => {
   let totalPrice = await page.locator('li.totalRow .value').nth(1).textContent();
   expect(totalPrice).toEqual(price);
   await page.getByText('Checkout').click();
+
+
   await page.locator('[placeholder="Select Country"]').pressSequentially('India');
   const country = page.locator('section.ta-results span');
   await country.first().waitFor({ state: 'visible' });
@@ -38,9 +42,14 @@ test.only("order product", async ({ browser }) => {
     }
   }
   await page.locator('.action__submit').click();
+
+
   await expect(page.locator('.hero-primary')).toHaveText(' Thankyou for the order. ');
   let orderid = await page.getByText("|").textContent();
   orderid = orderid.replaceAll("|", "").trim();
+
+
+  
   // await page.locator('[routerlink$="myorders"]').click();
   await page.getByText('Orders History Page').click();
   const orderrow = page.locator('tbody tr');
